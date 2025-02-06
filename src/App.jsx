@@ -1,25 +1,35 @@
-import { useState } from 'react'           // Importe la fonction useState de la bibliothèque React
-import React from 'react'                  // Importe la bibliothèque React
-import Layout from '/components/Layout.jsx'   // Importe le composant Layout
-import Header from './Header.jsx'   // Importe le composant Header
-import Footer from './Footer.jsx'   // Importe le composant Footer
-import Content from './Content.jsx'         // Importe le composant Content
-import './App.css'                         // Importe le fichier CSS
+import React, { useState } from 'react'    /* Importe React et la fonction useState de la bibliothèque React */
+import Layout from './components/Layout/Layout'   /* Importe le composant Layout*/
+import Footer from './components/Footer/Footer'   /* Importe le composant Footer */
 
-//import reactLogo from './assets/react.svg' // This is the original import
-//import viteLogo from '/vite.svg' // This is the original import
+import Container from './components/Container/container'     /* Importe le composant Container */
+import './App.css'                         /* Importe le fichier CSS */
 
 
-function App() {      // Composant principal qui assemble l'ensemble de l'application
-  return (            // Retourne l'arborescence JSX qui sera affichée//
-    <Layout>          {/* Retourne le composant Layout */}
-      <Header />      {/* Retourne le composant Header */}
-      <Content />        {/* Retourne le composant Content */}
-      <Footer />      {/* Retourne le composant Footer */}
-    </Layout>         // Fin du composant Layout
+function App() {      /* Composant principal qui assemble l'ensemble de l'application */
+  const [state, setState] = useState(null); /* Déclare un état local avec useState */
+
+  // Fonction pour vérifier les logs du serveur
+  const verifierLogsServeur = async () => {
+
+    /* -------------------------ERREUR NON RESOLUE PB SERVER ---------------------------------- */
+    try {
+      const response = await fetch('http://localhost:5174'); // Remplacez 'http://localhost:5174' par l'URL de votre serveur
+      const logs = await response.json();
+      console.log(logs);
+    } catch (error) {
+      console.error('Erreur lors de la vérification des logs du serveur:', error);
+    }
+  };
+
+  return (            /* Retourne l'arborescence JSX qui sera affichée */
+    <Layout>                  
+      <Container />        
+      <Footer />      
+    </Layout>         /* Fin du composant Layout */
   );
 }
 
-export default App    // Exporte le composant App
+export default App;    /* Exporte le composant App */
 
  
