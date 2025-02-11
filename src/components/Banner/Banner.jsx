@@ -1,18 +1,20 @@
+import logo from '../../assets/LOGO_index.png'      // import logo
+import React from 'react';                              // Importe biblio React
+import ReactDOM from 'react-dom/client';                // Importe biblio ReactDOM
+import './banner.css';                                  // Importe fichier CSS
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './banner.css'; // Assuming you have a CSS file for styling
-
-function Banner() {
-  return (
-    <div id="Banner">
-      <img src="path/to/your/image.jpg" alt="Banner" />
-      <h1>Chez vous, partout et ailleurs</h1>
-    </div>
+function Banner() {                                     // Déclare composant Banner
+  return (                                              // Retourne l'arborescence JSX qui sera affichée
+    <div id="Banner">                                   {/* Retourne elemt div avec l'ID Banner */}
+      <img src="path/to/your/image.jpg" alt="Banner" /> {/* Retourne une img avec chemin de l'img + txt alternatif */}
+      <h1>Chez vous, partout et ailleurs</h1>           {/* Retourne titre */}
+    </div>                                              // Ferme elemt div
   );
 }
 
-export default Banner;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Banner />);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));    // Crée racine ReactDOM
+root.render(<Banner />);                                              // Affiche composant Banner dans racine
+
+export default Banner;                                                // Exporte composant Banner

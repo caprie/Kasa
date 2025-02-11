@@ -1,23 +1,17 @@
-import React from 'react'; /* Importe la bibliothèque React */
-import Logo from './assets/LOGO_index.png'; /* Importe le logo */
-import Nav from './components/Nav'; /* Importe le composant Nav */
+import React from 'react';                    /* Importe biblio React */
+import Logo from '../../assets/LOGO_index.png';   /* Importe logo */
+import Nav from '../Nav/Nav';           /* Importe component Nav */
+import './header.scss';                        /* Importe fichier CSS */
 
-function Header() { 
-  /* Composant Header qui contient le logo et la navigation */
-  return ( 
-    /* Retourne l'arborescence JSX qui sera affichée */
-    <div id="Header"> {/* Retourne un élément div avec l'identifiant Header */}
-      <img src={Logo} alt="Logo" />
-      <a href="index.html">Accueil</a> 
-      <a href="about.html">A propos</a>
-      {/* Affiche le logo */}
-      <Nav /> 
-      {/* Affiche le composant Nav */}
+function Header() {                           /* component Header avec logo + navigation */
+  return (                                    /* Retourne arborescence JSX qui sera affichée */
+    <div id="Header">                         {/* Retourne elemt div avec identifiant Header */}
+      <img src={Logo} alt="Logo" />           {/* Retourne img avec logo + txt alternatif */}
+      <Nav />                                 {/* Affiche component Nav */}
     </div> 
-    /* Fin de l'élément div */
-  ); 
-  /* Fin du retour */
-} 
-/* Fin du composant Header */
+    
+  );                                           {/* Fin retour */}
+}                                              {/* Fin component Header */}
 
-export default Header; /* Exporte le composant Header */
+
+export default Header;                         /* Exporte component Header */

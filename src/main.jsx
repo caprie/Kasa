@@ -1,12 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { StrictMode } from 'react';
-import App from './App';
-import './index.css';
+import React from 'react';                                          // Importe biblio React
+import ReactDOM from 'react-dom/client';                            // Importe biblio ReactDOM
+import App from './App';                                            // Importe component App
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'));  // Crée racine ReactDOM
+root.render(                                                        // Affiche component App dans racine
+  <React.StrictMode>                                                {/* Retourne StrictMode*/}
+    <App />                                                         {/* Retourne component App */}
+  </React.StrictMode>                                               /* Ferme StrictMode */
 );
